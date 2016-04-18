@@ -1,0 +1,87 @@
+$susy: (
+  global-box-sizing: border-box,
+  use-custom: (rem: true),
+  columns: 12,
+  gutters: 1/5,
+  math: fluid,
+  output: float
+ );
+
+@include border-box-sizing;
+
+.wrapper {
+	width: 95%;
+	@include container(64em);
+}
+
+img {
+	max-width: 100%;
+}
+
+aside,
+div,
+form,
+header,
+nav,
+section,
+ul,
+li,
+article,
+caption,
+ol,
+footer {
+	@include container;
+	@include clearfix;
+}
+
+%two,
+%three,
+%four,
+%five,
+%six {
+	@include span(full);
+}
+
+
+%two {
+	@include breakpoint($br-tablet) {
+		@include gallery(6 of 12); 
+	}
+}
+
+%three {
+	@include breakpoint($br-tablet) {
+		@include gallery(4 of 12); 
+	}
+}
+
+%four {
+	@include breakpoint($br-tablet) {
+		@include gallery(6 of 12); 
+	}
+	@include breakpoint($br-desktop) {
+		@include gallery(3 of 12); 
+	}
+}
+
+%five {
+	@include breakpoint($br-tablet) {
+		@include gallery(4 of 12); 
+	}
+	@include breakpoint($br-desktop) {
+		@include gallery(3 of 15); 
+	}
+}
+
+%six {
+	@include breakpoint($br-small) {
+		@include gallery(6 of 12);
+	}
+	@include breakpoint($br-tablet) {
+		@include gallery(3 of 12);
+	}
+	@include breakpoint($br-desktop) {
+		@include gallery(3 of 18);
+	}
+}
+
